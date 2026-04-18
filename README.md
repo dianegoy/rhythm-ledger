@@ -1,50 +1,88 @@
-# Welcome to your Expo app 👋
+# Rhythm Ledger
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A private mobile health tracking application built for a single user to collect, organize, and report on their own private health data. Designed and developed in three weeks by a solo developer with a clinical nursing background.
 
-## Get started
+Rhythm Ledger is not a generic wellness app. It was built around a specific clinical insight: hormones are the body's messengers, symptoms rarely occur in isolation. Hydration status, menstrual cycle phase, bowel motility, and daily symptoms can give clinicians or the person great insight when collected and analyzed. Tracking them together tells a more complete story than tracking any one of them alone.
 
-1. Install dependencies
+---
 
-   ```bash
-   npm install
-   ```
+## Screenshots
 
-2. Start the app
+| Dashboard | Symptom Log | Health Intelligence | Report |
+|---|---|---|---|
+| ![Dashboard](./assets/images/screenshots/dashboard.png) | ![Symptom Log](./assets/images/screenshots/symptom.png) | ![Insights](./assets/images/screenshots/insights.png) | ![Report](./assets/images/screenshots/report.png) |
 
-   ```bash
-   npx expo start
-   ```
+---
 
-In the output, you'll find options to open the app in a
+## Features
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+**Dashboard**
+- Daily hydration progress toward a personalized goal (oz)
+- Current menstrual cycle phase with estimated hormone levels
+- Contextual guidance on how the current phase may feel and what nutrition supports it
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+**Logging**
+- Symptoms: common presets plus free-text input, with a 1-5 severity rating and optional note
+- Medications: log what was taken and when
+- Hydration: fluid intake tracking throughout the day
+- GI / Bowel movements: Bristol scale logging
+- Menstrual cycle: period and flow tracking
 
-## Get a fresh project
+**Health Intelligence**
+- Cycle phase analysis with estimated ovulation and next period dates
+- Cross-variable insights that flag conditions like low hydration during the luteal phase that increase motility risk
+- Phase-specific symptom patterns drawn from the user's own logged history
+- Recommendations based on combined data inputs
 
-When you're ready, run:
+**Report**
+- 30-day overview of cycle, hydration, motility, and top symptoms
+- Exportable as a doctor-ready PDF the user can share or download directly from the app
+- Formatted so a medical provider can quickly read the patient's recent health picture
 
-```bash
-npm run reset-project
-```
+**Privacy**
+- Sensitive health entries are payload-encrypted before being stored in Supabase
+- Built for a single private user with no data sharing or third-party analytics
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+---
 
-## Learn more
+## Tech Stack
 
-To learn more about developing your project with Expo, look at the following resources:
+| Layer | Technology |
+|---|---|
+| Framework | Expo (React Native) |
+| Language | TypeScript |
+| Backend / Database | Supabase (PostgreSQL) |
+| Authentication | Supabase Auth |
+| UI Design | Figma |
+| IDE | VS Code |
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+---
 
-## Join the community
+## Architecture Notes
 
-Join our community of developers creating universal apps.
+- File-based routing via Expo Router
+- Modular tab structure: home, log (cycle, gi, hydration, medication, symptom, trends), insights, report
+- Supabase handles user authentication and persistent data storage
+- PDF export uses the system print UI, triggered from the Report tab
+- Currently deployed as a private app on a single Android device via Expo Go
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+---
+
+## Why This Exists
+
+This app was built for one person. Not as a class project or a portfolio exercise. I cared, had an idea, and have been learning how I could build my idea.
+
+The clinical reasoning behind it comes from six years of nursing. Hormones regulate nearly every system in the body, and women's health data is most useful when it is longitudinal, contextual, and readable by a medical provider. Most tracking apps do one thing. This one connects them.
+
+---
+
+## Status
+
+Private deployment. Not yet publicly available. Built and maintained by a solo developer.
+
+---
+
+## Developer
+
+Diane Goy
+[linkedin.com/in/dianegoy360](https://www.linkedin.com/in/dianegoy360/) • [github.com/dianegoy](https://github.com/dianegoy)
