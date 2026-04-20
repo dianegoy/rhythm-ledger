@@ -1,6 +1,6 @@
 # Rhythm Ledger
 
-A private mobile health tracking application built for a single user to collect, organize, and report on their own private health data. Designed and developed in three weeks by a solo developer with a clinical nursing background.
+A private mobile health tracking application built for a single user to collect, organize, and report on their own private health data. Designed and developed by a solo developer with a clinical nursing background.
 
 Rhythm Ledger is not a generic wellness app. It was built around a specific clinical insight: hormones are the body's messengers, symptoms rarely occur in isolation. Hydration status, menstrual cycle phase, bowel motility, and daily symptoms can give clinicians or the person great insight when collected and analyzed. Tracking them together tells a more complete story than tracking any one of them alone.
 
